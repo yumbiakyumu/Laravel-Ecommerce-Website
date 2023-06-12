@@ -29,5 +29,25 @@ public function delete_category($id)
      return redirect()->back()->with('message','Category deleted successfully');
 }
 
+public function view_product(){
+
+$category=category::all();    
+return view('admin.product',compact('category'));
+
+
+
+}
+public function add_product(Request $request){
+
+    return view('admin.product');
+    
+    
+    
+    }
+
+
+
+
+
 }
 
