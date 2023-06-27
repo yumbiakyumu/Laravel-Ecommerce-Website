@@ -50,8 +50,7 @@
       <!-- partial -->
       @include('admin.header')
         <!-- partial -->
-        <div class="main-panel">
-          <div class="content-wrapper">
+        
           @if(session()->has('message'))
 
 <div class="alert alert-success">
