@@ -51,7 +51,7 @@ public function add_product(Request $request){
     $product->category=$request->category;
     $image=$request->image;
     $imagename=time().'.'.$image->getClientOriginalExtension();
-    $request->image->move('product,$imagename');
+    $request->image->move('product',$imagename);
     $product->image=$imagename;
     $product->save();
     return redirect()->back()->with('message','product added successfully');
