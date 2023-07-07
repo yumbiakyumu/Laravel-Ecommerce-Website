@@ -62,8 +62,16 @@ public function show_product()
     $product=product::all();
    return view('admin.show_product',compact('product')); 
 }
+public function delete_product($id){
+    $product=product::find($id); 
+    $product->delete();
+    return redirect()->back()->with('message','product deleted successfully');
 
-
+}
+public function update_product($id){
+    $product=product::find($id);
+    return view('admin.update_product',compact('product'));
+}
 
 }
 
