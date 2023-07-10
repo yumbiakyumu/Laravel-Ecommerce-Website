@@ -97,7 +97,8 @@
              <select class="text_color" name="category" required="">
              
              <option value="" selected="" >Add a Category here</option>  
-             
+            
+            </select>
 </div>
 <div class="div_design">
             <label>Image :</label>
