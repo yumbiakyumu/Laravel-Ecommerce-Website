@@ -51,7 +51,9 @@
       <!-- partial -->
       @include('admin.header')
         <!-- partial -->
-        
+        <div class="main-panel">
+          <div class="content-wrapper">
+
           @if(session()->has('message'))
 
 <div class="alert alert-success">
@@ -74,36 +76,41 @@
             @csrf
             <div class="div_design">
             <label>Product Title :</label>
-             <input class="text_color"  type="text" name="title" placeholder="write a title" required="">
+             <input class="text_color"  type="text" name="title" placeholder="write a title" required="" value="{{$product->title}}">
 </div>
 <div class="div_design">
             <label>Description :</label>
-             <input class="text_color"  type="text" name="description" placeholder="write a description" required="">
+             <input class="text_color"  type="text" name="description" placeholder="write a description" required="" value="{{$product->description}}">
 </div>
 <div class="div_design">
             <label>Price :</label>
-             <input class="text_color"  type="number" name="price" placeholder="Enter a price" required="">
+             <input class="text_color"  type="number" name="price" placeholder="Enter a price" required="" value="{{$product->price}}">
 </div>
 <div class="div_design">
             <label>Discount Price :</label>
-             <input class="text_color"  type="number"  name="dis_price" placeholder="Enter a discount price">
+             <input class="text_color"  type="number"  name="dis_price" placeholder="Enter a discount price" value="{{$product->discount_price}}">
 </div>
 <div class="div_design">
             <label>Quantity :</label>
-             <input class="text_color"  type="number" min="0" name="quantity" placeholder="write a quantity" required="">
+             <input class="text_color"  type="number" min="0" name="quantity" placeholder="write a quantity" required="" value="{{$product->quantity}}">
 </div>
 <div class="div_design">
             <label>Product Category :</label>
              <select class="text_color" name="category" required="">
              
-             <option value="" selected="" >Add a Category here</option>  
+             <option value="{{$product->category}}" selected="" >{{$product->category}}</option>  
             
             </select>
 </div>
 <div class="div_design">
-            <label>Image :</label>
+            <label>Current Product Image :</label>
+             <img style="margin:auto;" height="100" width="100" src="/product/{{$product->image}}">
+</div>
+<div class="div_design">
+            <label>Change Product Image :</label>
              <input type="file" name="image" required="">
 </div>
+
 <div class="div_design">
             
              <input type="submit" value="Add Product" class="btn btn-primary">

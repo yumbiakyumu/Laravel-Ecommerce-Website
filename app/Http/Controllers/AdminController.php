@@ -70,7 +70,8 @@ public function delete_product($id){
 }
 public function update_product($id){
     $product=product::find($id);
-    return view('admin.update_product',compact('product'));
+    $category=category::all();
+    return view('admin.update_product',compact('product','category'));
 }
 
 }
