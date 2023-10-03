@@ -39,5 +39,16 @@ class Homecontroller extends Controller
         return view('home.product_details',compact('product'));
 
     }
+    public function add_cart(Request $request,$id){
+        if (Auth::id()){
+            $user=Auth::user();
+            $product=product::find($id);
+            dd($product);
+
+        }
+        else{
+            return redirect('login');
+        }
+    }
 
 }
